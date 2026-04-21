@@ -28,6 +28,12 @@ public class UsuarioServiceDTO {
         return mapToDto(usuarioRepository.save(usuario));
     }
 
+    public UsuarioResponseDTO visualizarUsuario(Long id) {
+        Usuario usuario = usuarioRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+        return mapToDto(usuario);
+    }
+
     public UsuarioResponseDTO actualizarDatos(Long id, UsuarioRequestDto dto) {
         Usuario usuario = usuarioRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
