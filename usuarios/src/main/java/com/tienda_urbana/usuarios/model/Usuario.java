@@ -8,7 +8,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -29,23 +28,15 @@ public class Usuario {
     private Long id;
 
     @Column(name = "nombre", nullable = false, length = 50)
-    @NotBlank(message = "El nombre no puede estar en blanco")
-    @Size(max = 50, message = "El nombre no puede contener mas de 50 caracteres")
     private String nombre;
 
     @Column(name = "email", nullable = false, length = 50)
-    @Email(message = "Correo invalido")
-    @NotBlank(message = "El correo no puede estar vacio")
-    @Size(max = 50, message = "El correo no puede contener mas de 50 caracteres")
     private String email;
 
     @Column(name = "password", nullable = false, length = 20)
-    @NotBlank(message = "La contraseña no puede quedar en blanco")
-    @Size(min = 8, max = 20, message = "La contraseña debe contener entre 8 y 20 caracteres")
     private String password;
 
     @Column(name = "clave_recuperacion", length = 20)
-    @Size(min = 8, max = 20, message = "La contraseña debe contener entre 8 y 20 caracteres")
     private String claveRecuperacion;
 
     @Column(name = "rol", nullable = false, length = 15)
