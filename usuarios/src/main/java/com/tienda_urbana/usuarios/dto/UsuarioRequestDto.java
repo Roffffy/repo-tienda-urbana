@@ -25,6 +25,4 @@ public class UsuarioRequestDto {
     @Size(min = 8, max = 20, message = "La contraseña debe contener entre 8 y 20 caracteres")
     private String password;
 
-    @Size(min = 8, max = 20, message = "La contraseña debe contener entre 8 y 20 caracteres")
-    private String claveRecuperacion;
 }
